@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "body-parser": "latest",
+    "electrolyte": "^0.2.0",
     "express": "latest",
     "lodash": "^3.10.1",
     "mongoose": "latest",

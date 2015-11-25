@@ -1,4 +1,4 @@
-// config/env/development.js
+// config/env/production.js
 
 (function() {
 

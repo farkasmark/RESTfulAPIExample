@@ -1,17 +1,15 @@
-// app/db.js
+// app/components/db.js
 
 (function() {
-	
-	var config	= require('../config/env/development');	// config file
 	
 	var driver	= require('mongoose');					// driver for MongoDB
 	var _ = require('lodash');							// lodash
 	
-	var isConnected = false;
-	
-	module.exports = {
-		// used to controll access to MongoDB database
-		db: {
+	exports = module.exports = function(settings, logger) {
+		
+		var isConnected = false;
+		
+		return {			
 			// check if connected to database
 			isConnected: function() {
 				return isConnected;
@@ -20,7 +18,7 @@
 			connect: function(callback) {
 				if (!isConnected) {
 					// connect to our MongoDB database 
-					driver.connect(config.db.url, function(err) {
+					driver.connect(settings.db.url, function(err) {
 						if (err) {
 							callback(err);
 						} else {
@@ -47,6 +45,7 @@
 					},
 					// find all instances
 					find: function(callback) {
+						logger.info('Moka es kacagas... Maccccccckoook a kobon.');
 						Model.find(callback);
 					},
 					// find an instance by id
@@ -78,5 +77,8 @@
 			}
 		}
 	};
+	
+	exports['@singleton'] = true;
+	exports['@require'] = [ 'settings', 'logger' ];
 	
 })();

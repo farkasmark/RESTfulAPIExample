@@ -9,6 +9,17 @@
 	var morgan			= require('morgan');			// use HTTP request logger middleware for node.js
 	
 	//
+	// --- use IoC pattern ---
+	//
+	
+	var IoC	= require('electrolyte');
+	
+	IoC.use(IoC.node('app'));
+	IoC.use(IoC.node('app/components'));
+	IoC.use(IoC.node('app/models'));
+	IoC.use(IoC.node('config'));
+	
+	//
 	// --- use express middlewares ---
 	//
 	
@@ -18,35 +29,39 @@
 	app.use(bodyParser.json());
 	
 	// use logger
-	var logger			= require('./app/logging.js').logger;
-	logger.info('Test log.');
+	var logger = IoC.create('logger');
 	
 	// configure app to use morgan
 	// this will let us log the HTTP requests
-	//app.use(
-	//	// log HTTP requests
-	//	morgan(':method :url :status :response-time ms - :res[content-length]', { 
-	//		stream: logger.stream 
-	//	})
-	//);
+	app.use(
+		// log HTTP requests
+		morgan(':method :url :status :response-time ms - :res[content-length]', { 
+			stream: logger.stream 
+		})
+	);
 	
 	//
 	// --- apply express routes ---
 	//
-	var routes = require('./app/routes');	// create a router
 	
-	var apiRouter = express.Router();		// get an instance of the express Router 
-	routes.configure(app, apiRouter);		// configure our routes
+	// use the bear model we just created
+	var Bear = IoC.create('bear');
+		
+	// configure routes
+	var routes = IoC.create('routes');
+	routes.configure(app, {
+		Bear: Bear
+	});
 	
 	//
 	// --- start express application ---
 	//
 	
 	// config file
-	var config = require('./config/env/development');
+	var settings = IoC.create('settings');
 	
 	// set our port
-	var port = process.env.PORT || config.port;
+	var port = process.env.PORT || settings.port;
 	
 	// startup our app at http://localhost:3000
 	app.listen(port);
