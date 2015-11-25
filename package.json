@@ -1,0 +1,15 @@
+{
+  "name": "RESTfulAPIExample",
+  "version": "0.1.0",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "lodash": "^3.10.1",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "winston": "latest"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
