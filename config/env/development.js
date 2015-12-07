@@ -6,7 +6,7 @@
 		db: {
 			url : 'mongodb://localhost:27017/RESTfulAPIExample'
 		},
-		port: 3000
+		port: 8080
 	};
 	
 })();

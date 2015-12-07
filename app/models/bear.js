@@ -9,6 +9,6 @@
 		});
 	}; 
 
-	exports['@singleton'] = false;
+	exports['@singleton'] = true;
 	exports['@require'] = [ 'db' ];
 })();

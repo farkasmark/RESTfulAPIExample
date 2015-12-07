@@ -12,5 +12,10 @@
   },
   "scripts": {
     "start": "node server.js"
+  },
+  "devDependencies": {
+    "node-inspector": "^0.12.4",
+    "nodemon": "^1.8.1",
+    "noide": "0.0.7"
   }
 }

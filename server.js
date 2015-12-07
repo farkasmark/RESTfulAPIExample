@@ -17,6 +17,7 @@
 	IoC.use(IoC.node('app'));
 	IoC.use(IoC.node('app/components'));
 	IoC.use(IoC.node('app/models'));
+	IoC.use(IoC.node('app/handlers'));
 	IoC.use(IoC.node('config'));
 	
 	//
@@ -48,10 +49,11 @@
 	var Bear = IoC.create('bear');
 		
 	// configure routes
+	var router = express.Router();
 	var routes = IoC.create('routes');
-	routes.configure(app, {
-		Bear: Bear
-	});
+	routes.configure(router);
+	// all of our routes will be prefixed with /api
+	app.use('/api', router);
 	
 	//
 	// --- start express application ---
