@@ -2,9 +2,12 @@
   "name": "RESTfulAPIExample",
   "version": "0.1.0",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "body-parser": "latest",
+    "colors": "^1.1.2",
     "electrolyte": "^0.2.0",
     "express": "latest",
+    "jwt-simple": "^0.4.0",
     "lodash": "^3.10.1",
     "mongoose": "latest",
     "morgan": "latest",

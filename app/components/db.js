@@ -31,8 +31,10 @@
 			// create a database model
 			model: function(name, schema) {
 				
+				var Schema = driver.Schema(schema);
+				
 				// create a model object
-				var Model = driver.model(name, new driver.Schema(schema));
+				var Model = driver.model(name, Schema);
 				
 				// expose data access layer functions	
 				var DataAccessLayer = {
@@ -70,6 +72,12 @@
 					// remove an instance by id
 					remove: function(id, callback) {
 						Model.remove({ _id: id }, callback);
+					},
+					// preSave
+					preSave: function(callback) {
+						Schema.pre('save', function(next) {
+							callback(this, next);
+						});
 					}
 				};
 				
