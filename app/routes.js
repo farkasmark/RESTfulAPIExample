@@ -2,7 +2,7 @@
 
 (function() {
 
-	exports = module.exports = function(allRequestHandler, bearHandler, logger) {
+	exports = module.exports = function(allRequestHandler, tokenHandler, bearHandler, logger) {
 		return {
 			configure: function(router) {
 				
@@ -19,6 +19,11 @@
 				router.get('/', function(req, res) {
 					res.json({ message: 'hooray! welcome to our api! :)' });   
 				});
+		
+				//
+				// token based authentication endpoint
+				//
+				router.get('/token', tokenHandler.getToken);
 		
 				//
 				// on routes that end in /bears
@@ -44,6 +49,6 @@
 	};
 	
 	exports['@singleton'] = true;
-	exports['@require'] = [ 'allRequestHandler', 'bearHandler', 'logger'];
+	exports['@require'] = [ 'allRequestHandler', 'tokenHandler', 'bearHandler', 'logger'];
 	
 })();
