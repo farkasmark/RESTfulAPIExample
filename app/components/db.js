@@ -44,11 +44,15 @@
 						var instance = new Model(schema);
 						// save the instance
 						instance.save(callback);
+						return instance;
 					},
 					// find all instances
 					find: function(callback) {
 						logger.info('Moka es kacagas... Maccccccckoook a kobon.');
 						Model.find(callback);
+					},
+					findOne: function(query, callback) {
+						Model.findOne(query, callback);	
 					},
 					// find an instance by id
 					findById: function(id, callback) {

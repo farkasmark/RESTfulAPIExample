@@ -44,9 +44,6 @@
 	//
 	// --- apply express routes ---
 	//
-	
-	// use the bear model we just created
-	var Bear = IoC.create('bear');
 		
 	// configure routes
 	var router = express.Router();

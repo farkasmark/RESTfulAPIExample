@@ -35,11 +35,42 @@
 	
 	// use the user model we just created
 	var User = IoC.create('user');
+	var Crypt = IoC.create('crypt');
 	
-	User.create({ username: 'bob4', password: 'titok' }, function(err) {
-		if (err) {
+	var username = 'bob17';
+	var password = 'titok';
+	
+	User.findOne({username: username}, function(err, user) {
+		if(err) {
 			logger.error(err);
-		}
-		logger.info('User created.');
+		} else {
+			if(!user) {
+				// user cannot be found
+				logger.info('No user found. Creating one...');
+				
+				user = User.create({ username: username, password: password }, function(err) {
+					if (err) {
+						logger.error(err);
+					} else {
+						logger.info('User created.');
+						
+						Crypt.comparePassword(password, user.password, function(err, isMatch) {
+							if (err) {	      		
+								logger.error(err);
+							}
+							if(isMatch) {
+								logger.info('Great.');
+							} else {
+								logger.info('Not good.');
+							}
+						});
+					}
+				});
+							
+			} else {
+				logger.info('User already exists.');
+			}
+		}	
 	});
+
 })();
