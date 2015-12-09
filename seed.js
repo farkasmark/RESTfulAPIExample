@@ -35,9 +35,8 @@
 	
 	// use the user model we just created
 	var User = IoC.create('user');
-	var Crypt = IoC.create('crypt');
 	
-	var username = 'bob17';
+	var username = 'bob21';
 	var password = 'titok';
 	
 	User.findOne({username: username}, function(err, user) {
@@ -54,7 +53,7 @@
 					} else {
 						logger.info('User created.');
 						
-						Crypt.comparePassword(password, user.password, function(err, isMatch) {
+						User.comparePassword(user, password, function(err, isMatch) {
 							if (err) {	      		
 								logger.error(err);
 							}
