@@ -137,7 +137,7 @@
 
 		function deleteBearSaveToDb(req, res, next) {
 			// use our bear model to delete the bear we want
-			models.Bear.remove(req.params.bear_id, function(err, bear) {
+			Bear.remove(req.params.bear_id, function(err, bear) {
 				if (err) {
 					logger.error(err);
 					res.send(err);
