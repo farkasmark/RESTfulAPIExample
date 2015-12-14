@@ -2,11 +2,11 @@
 
 (function() {
 
-	exports = module.exports = function() {
+	var rfr = require('rfr');
 		
+	exports = module.exports = function() {
 		var env = process.env.NODE_ENV || 'development';
-		var settings = require('./env/' + env);
-
+		var settings = rfr('/config/env/' + env);
 		return settings;
 	}
 	

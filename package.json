@@ -7,10 +7,13 @@
     "colors": "^1.1.2",
     "electrolyte": "^0.2.0",
     "express": "latest",
+    "jsonwebtoken": "^5.4.1",
     "jwt-simple": "^0.4.0",
     "lodash": "^3.10.1",
+    "moment": "^2.10.6",
     "mongoose": "latest",
     "morgan": "latest",
+    "rfr": "^1.2.3",
     "winston": "latest"
   },
   "scripts": {

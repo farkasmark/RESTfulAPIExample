@@ -2,7 +2,7 @@
 
 (function() {
 
-	exports = module.exports = function(User, logger) {
+	exports = module.exports = function(User, logger, token, settings) {
 	  	
 		var authenticationErrorMsg	= 'Authentication error';
 		var authenticationErrorCode	= 401;
@@ -45,8 +45,31 @@
 	      			}
 					  
 					if (isMatch) {
+						
+						//
 						// Great, user has successfully authenticated, so we can generate and send them a token.
-						return res.send('OK');
+						//
+						
+						// get token issuer
+						var tokenIssuer = user.id;
+						// get token expiration
+						var tokenExpiration = token.getTokenExpiration(settings.tokenExpiresAfterHours);
+						// get token secret
+						var tokenSecret = settings.tokenSecret;
+						
+						// get issued token
+						token.issueToken(tokenIssuer, tokenExpiration, tokenSecret, function(token) {
+							// send back token, expiration and user
+							res.json({
+								token:		token,
+								expires:	tokenExpiration,
+								user:		{
+									id:		user.id,
+									name:	user.username
+								}
+							});
+						});
+												
 					} else {
 						// The password is wrong ...
 						logger.error(req.ip + ' ' + req.headers['user-agent'] + ' with username ' + req.headers.username + ' tried to log in, but password was incorrect.');
@@ -72,6 +95,6 @@
 	/**
 	 * Component annotations.
 	 */
-	exports['@require'] = [ 'user', 'logger' ];
+	exports['@require'] = [ 'user', 'logger', 'token', 'settings' ];
 	
 })();

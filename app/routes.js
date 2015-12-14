@@ -2,7 +2,7 @@
 
 (function() {
 
-	exports = module.exports = function(allRequestHandler, tokenHandler, bearHandler, logger) {
+	exports = module.exports = function(allRequestHandler, tokenHandler, authHandler, bearHandler, logger) {
 		return {
 			configure: function(router) {
 				
@@ -30,25 +30,25 @@
 				//		
 				router.route('/bears')
 					// create a bear (accessed at POST http://localhost:3000/api/bears)
-					.post(bearHandler.createBear)
+					.post(authHandler.processAuth, bearHandler.createBear)
 					// get all the bears (accessed at GET http://localhost:3000/api/bears)
-					.get(bearHandler.getBears);
+					.get(authHandler.processAuth, bearHandler.getBears);
 				
 				//
 				// on routes that end in /bears/:bear_id
 				//
 				router.route('/bears/:bear_id')
 					// get the bear with that id (accessed at GET http://localhost:3000/api/bears/:bear_id)
-					.get(bearHandler.getBear)
+					.get(authHandler.processAuth, bearHandler.getBear)
 					// update the bear with this id (accessed at PUT http://localhost:3000/api/bears/:bear_id)
-					.put(bearHandler.updateBear)
+					.put(authHandler.processAuth, bearHandler.updateBear)
 					// delete the bear with this id (accessed at DELETE http://localhost:3000/api/bears/:bear_id)
-					.delete(bearHandler.deleteBear);
+					.delete(authHandler.processAuth, bearHandler.deleteBear);
 			}
 		}
 	};
 	
 	exports['@singleton'] = true;
-	exports['@require'] = [ 'allRequestHandler', 'tokenHandler', 'bearHandler', 'logger'];
+	exports['@require'] = [ 'allRequestHandler', 'tokenHandler', 'authHandler', 'bearHandler', 'logger'];
 	
 })();
