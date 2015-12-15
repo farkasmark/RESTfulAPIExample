@@ -8,3 +8,6 @@ http://thenodeway.io/posts/testing-essentials/
 
 https://docs.docker.com/engine/examples/mongodb/
 https://docs.docker.com/engine/examples/nodejs_web_app/
+
+http://attackofzach.com/setting-up-a-project-using-karma-with-mocha-and-chai/
+http://syropia.net/journal/javascript-testing-with-jasmine-and-gulp-redux

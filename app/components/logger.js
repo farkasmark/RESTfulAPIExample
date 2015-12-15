@@ -1,5 +1,6 @@
 // app/logger.js
 // inspired by: https://auth0.com/blog/2015/09/04/an-introduction-to-microservices-part-1/
+"use strict";
 
 (function() {
 		

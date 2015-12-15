@@ -1,4 +1,5 @@
 // app/models/user.js
+"use strict";
 
 (function() {
 

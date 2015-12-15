@@ -1,4 +1,5 @@
 // app/models/bear.js
+"use strict";
 
 (function() {
 

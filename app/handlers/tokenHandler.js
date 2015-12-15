@@ -1,4 +1,5 @@
 // app/handlers/tokenHandler.js
+"use strict";
 
 (function() {
 

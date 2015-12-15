@@ -1,4 +1,5 @@
 // config/settings.js
+"use strict";
 
 (function() {
 

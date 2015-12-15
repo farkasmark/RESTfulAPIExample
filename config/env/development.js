@@ -1,4 +1,5 @@
 // config/env/development.js
+"use strict";
 
 (function() {
 

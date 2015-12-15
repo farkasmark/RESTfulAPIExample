@@ -1,4 +1,5 @@
 // app/handlers/authHandler.js
+"use strict";
 
 (function() {
 	

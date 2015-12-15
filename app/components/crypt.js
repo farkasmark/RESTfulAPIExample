@@ -1,4 +1,5 @@
 // app/crypt.js
+"use strict";
 
 (function() {
 		

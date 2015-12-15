@@ -1,4 +1,5 @@
 // app/handlers/bearHandler.js
+"use strict";
 
 (function() {
 

@@ -1,4 +1,5 @@
 // app/components/db.js
+"use strict";
 
 (function() {
 	

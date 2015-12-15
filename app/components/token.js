@@ -1,4 +1,5 @@
 // app/components/token.js
+"use strict";
 
 (function() {
 	

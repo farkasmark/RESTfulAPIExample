@@ -1,4 +1,5 @@
 // app/handlers/allRequestHandler.js
+"use strict";
 
 (function() {
 
