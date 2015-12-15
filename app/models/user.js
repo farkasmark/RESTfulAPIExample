@@ -1,8 +1,8 @@
 // app/models/user.js
-"use strict";
 
 (function() {
-
+	'use strict';
+	
 	exports = module.exports = function(db, logger, crypt) {
 		
 		// create a user model

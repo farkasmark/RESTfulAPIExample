@@ -1,7 +1,7 @@
 // app/crypt.js
-"use strict";
 
 (function() {
+	'use strict';
 		
 	//
 	// Crypt class.

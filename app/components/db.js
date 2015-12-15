@@ -1,7 +1,7 @@
 // app/components/db.js
-"use strict";
 
 (function() {
+	'use strict';
 	
 	var driver	= require('mongoose');					// driver for MongoDB
 	var _ = require('lodash');							// lodash
@@ -88,7 +88,7 @@
 				
 				return DataAccessLayer;
 			}
-		}
+		};
 	};
 	
 	exports['@singleton'] = true;

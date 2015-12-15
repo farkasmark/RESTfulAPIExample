@@ -1,9 +1,9 @@
 // app/logger.js
 // inspired by: https://auth0.com/blog/2015/09/04/an-introduction-to-microservices-part-1/
-"use strict";
 
 (function() {
-		
+	'use strict';
+			
 	//
 	// Logger class.
 	//
@@ -13,19 +13,19 @@
 		
 		this.log = function(msg) {
 			logger.log(msg);
-		}
+		};
 		
 		this.info = function(msg) {
 			logger.info(msg);
-		}
+		};
 		
 		this.warn = function(msg) {
 			logger.warn(msg);
-		}
+		};
 		
 		this.error = function(msg) {
 			logger.error(msg);
-		}
+		};
 	}
 
 	Logger.prototype.constructor = Logger;

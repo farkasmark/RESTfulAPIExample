@@ -1,8 +1,8 @@
 // app/handlers/bearHandler.js
-"use strict";
 
 (function() {
-
+	'use strict';
+	
 	exports = module.exports = function(Bear, logger) {
 	  
 		//
@@ -177,7 +177,7 @@
 				deleteBearSaveToDb
 			]
 		};
-	}
+	};
 
 	/**
 	 * Component annotations.

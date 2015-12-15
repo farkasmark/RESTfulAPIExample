@@ -1,12 +1,11 @@
 // seed.js
-"use strict";
 
 /**
  * Seed.js - seeds the database. I.e. it creates a dummy user.
  */
-
 (function() {
-
+	'use strict';
+	
 	//
 	// --- use IoC pattern ---
 	//

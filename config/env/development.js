@@ -1,8 +1,8 @@
 // config/env/development.js
-"use strict";
 
 (function() {
-
+	'use strict';
+	
 	module.exports = {
 		db: {
 			url : 'mongodb://localhost:27017/RESTfulAPIExample'

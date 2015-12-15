@@ -1,8 +1,8 @@
 // app/handlers/allRequestHandler.js
-"use strict";
 
 (function() {
-
+	'use strict';
+	
 	exports = module.exports = function(db, logger) {
 	  
 		//
@@ -42,7 +42,7 @@
 				processAllRequestConnectToDb
 			]
 		};
-	}
+	};
 
 	/**
 	 * Component annotations.

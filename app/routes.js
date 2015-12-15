@@ -1,8 +1,8 @@
 // app/routes.js
-"use strict";
 
 (function() {
-
+	'use strict';
+	
 	exports = module.exports = function(allRequestHandler, tokenHandler, authHandler, bearHandler, logger) {
 		return {
 			configure: function(router) {
@@ -46,7 +46,7 @@
 					// delete the bear with this id (accessed at DELETE http://localhost:3000/api/bears/:bear_id)
 					.delete(authHandler.processAuth, bearHandler.deleteBear);
 			}
-		}
+		};
 	};
 	
 	exports['@singleton'] = true;

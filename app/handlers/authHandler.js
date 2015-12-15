@@ -1,7 +1,7 @@
 // app/handlers/authHandler.js
-"use strict";
 
 (function() {
+	'use strict';
 	
 	var url = require('url');
 	
@@ -23,7 +23,7 @@
 		
 		function processAuthLoadFromDb(req, res, next) {
 			// Parse the URL, we might need this
-			var parsed_url = url.parse(req.url, true)
+			var parsed_url = url.parse(req.url, true);
 			
 			/**
 			 * Take the token from:

@@ -1,8 +1,8 @@
 // app/handlers/tokenHandler.js
-"use strict";
 
 (function() {
-
+	'use strict';
+	
 	exports = module.exports = function(User, logger, token, settings) {
 	  	
 		var authenticationErrorMsg	= 'Authentication error';
@@ -91,7 +91,7 @@
 				getTokenAuthenticateRequest
 			]
 		};
-	}
+	};
 
 	/**
 	 * Component annotations.

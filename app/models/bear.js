@@ -1,8 +1,8 @@
 // app/models/bear.js
-"use strict";
 
 (function() {
-
+	'use strict';
+	
 	exports = module.exports = function(db) {
 		// create a bear model
 		return db.model('Bear', {

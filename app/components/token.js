@@ -1,8 +1,8 @@
 // app/components/token.js
-"use strict";
 
 (function() {
-	
+	'use strict';
+		
 	var jwt		= require('jsonwebtoken');
 	var moment	= require('moment'); 
 	
