@@ -10,8 +10,8 @@
         afterEach(function () {
         });
     
-        it('should fail', function () {
-            expect(true).to.be.equal(false);
+        it('should pass', function () {
+            expect(true).to.be.equal(true);
         });
     });
 })();
