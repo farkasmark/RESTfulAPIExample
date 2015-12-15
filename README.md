@@ -12,3 +12,8 @@ https://docs.docker.com/engine/examples/nodejs_web_app/
 http://attackofzach.com/setting-up-a-project-using-karma-with-mocha-and-chai/
 http://syropia.net/journal/javascript-testing-with-jasmine-and-gulp-redux
 http://www.sitepoint.com/introduction-gulp-js/
+https://gist.github.com/donovanh/9758053
+http://code.tutsplus.com/tutorials/managing-your-build-tasks-with-gulpjs--net-36910
+
+// mocking mongoose
+https://www.joyent.com/blog/risingstack-writing-testable-apis-the-basics

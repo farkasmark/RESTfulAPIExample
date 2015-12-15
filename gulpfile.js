@@ -52,7 +52,10 @@
 				tasks: ['lint', 'test'] 
 			})
 			.on('restart', function () {
-				console.log('restarted!')
+				console.log('restarted!');
 			});
 	});
+	
+	// Default Task
+	gulp.task('default', ['lint', 'test', 'develop']);
 })();
