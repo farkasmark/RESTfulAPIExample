@@ -7,6 +7,7 @@
     "colors": "^1.1.2",
     "electrolyte": "^0.2.0",
     "express": "^4.13.3",
+    "gulp": "^3.9.0",
     "jsonwebtoken": "^5.4.1",
     "jwt-simple": "^0.4.0",
     "lodash": "^3.10.1",
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "start": "gulp develop",
-	"test": "gulp test"
+    "test": "gulp test"
   },
   "devDependencies": {
     "chai": "^3.4.1",
